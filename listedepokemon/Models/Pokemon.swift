@@ -11,14 +11,16 @@ import Foundation
 class Pokemon {
     var id : String = ""
     var pkmnId : Int = 0
+    var name : String = ""
     var imgUrl : String = ""
     var description : String = ""
     var types : [String] = [""]
     var evolutions : Evolution = Evolution()
     
-    func setPkmn(id : String, pkmnId : Int, imgUrl : String, desc : String, types : [String], evol : Evolution) {
+    func setPkmn(id : String, pkmnId : Int, name : String, imgUrl : String, desc : String, types : [String], evol : Evolution) {
         self.id = id
         self.pkmnId = pkmnId
+        self.name = name
         self.imgUrl = imgUrl
         self.description = desc
         self.types = types
