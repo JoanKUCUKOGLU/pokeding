@@ -166,6 +166,7 @@
 		4C5B3D1E234CCDFB005AB12A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC0AFD16234E089000317F67 /* Main.storyboard */,
 				32995020234B7D750070D409 /* LaunchScreen.storyboard */,
 				325978E5234E11FB00910FE5 /* PokemonTableViewCell.swift */,
 			);
