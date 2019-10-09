@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32064568234E267C00446CC3 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32064567234E267C00446CC3 /* PokemonAPI.swift */; };
 		325978E4234E119400910FE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325978E2234E119400910FE5 /* Main.storyboard */; };
 		325978E6234E11FB00910FE5 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325978E5234E11FB00910FE5 /* PokemonTableViewCell.swift */; };
 		32995018234B7D740070D409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32995017234B7D740070D409 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2600DD535429B89FEFD9C5C0 /* Pods-listedepokemon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-listedepokemon.debug.xcconfig"; path = "Target Support Files/Pods-listedepokemon/Pods-listedepokemon.debug.xcconfig"; sourceTree = "<group>"; };
+		32064567234E267C00446CC3 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		325978E3234E119400910FE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		325978E5234E11FB00910FE5 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		32995014234B7D740070D409 /* listedepokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listedepokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 		4C5B3D1F234CCE01005AB12A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				32064567234E267C00446CC3 /* PokemonAPI.swift */,
 				CC0AFD14234E087600317F67 /* Parsepokemon.swift */,
 			);
 			path = Services;
@@ -455,6 +458,7 @@
 				325978E6234E11FB00910FE5 /* PokemonTableViewCell.swift in Sources */,
 				3299501A234B7D740070D409 /* ViewController.swift in Sources */,
 				32995018234B7D740070D409 /* AppDelegate.swift in Sources */,
+				32064568234E267C00446CC3 /* PokemonAPI.swift in Sources */,
 				4C5B3D19234CC6BC005AB12A /* Pokemon.swift in Sources */,
 				CC0AFD15234E087600317F67 /* Parsepokemon.swift in Sources */,
 				CC0AFD13234E085700317F67 /* Evolution.swift in Sources */,
