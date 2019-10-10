@@ -73,6 +73,9 @@ class ViewController: UIViewController {
         }
         self.pokemonArray = sortedArray
     }
+    @IBAction func goToDetailButton(_ sender: Any) {
+        performSegue(withIdentifier: "goToDetails", sender: self)
+    }
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
