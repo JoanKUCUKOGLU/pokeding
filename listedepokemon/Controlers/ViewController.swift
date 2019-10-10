@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     var typeParam : String = "id"
     var dirParam : String = "desc"
     
+    var pokemonToPass : Pokemon = Pokemon()
+    
     @IBAction func typeAction(_ sender: Any) {
         let filter = typeFilter.selectedSegmentIndex
         if filter == 0 {
@@ -73,9 +75,22 @@ class ViewController: UIViewController {
         }
         self.pokemonArray = sortedArray
     }
+    
     @IBAction func goToDetailButton(_ sender: Any) {
         performSegue(withIdentifier: "goToDetails", sender: self)
     }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToDetails" {
+//
+//            let indexPath: NSIndexPath = self.pokemonList.indexPathForSelectedRow! as NSIndexPath
+//
+//            let pkmn: Pokemon = pokemonArray[indexPath.row];
+//
+//            let destVC = segue.destination as? DetailsController
+//            destVC?.pokemon = pkmn
+//        }
+//    }
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
@@ -112,9 +127,47 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         return 128
     }
     
-    /*
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     <#code#>
-     }
-     */
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let pkmn : Pokemon = pokemonArray[indexPath.row]
+//        self.performSegue(withIdentifier: "goToDetails", sender: pkmn)
+//    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToDetails" {
+//        if (segue.accessibilityActivate()) {
+//            let dc = segue.destination as! DetailsController
+//            dc.pokemon = sender as! Pokemon
+//        }
+//
+//        guard let dc = segue.destination as? DetailsController,
+//            let index = pokemonList.indexPathForSelectedRow?.row
+//            else {
+//                return
+//        }
+//        dc.pokemon = pokemonArray[index]
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let index = pokemonList.indexPathForSelectedRow,
+            let dc = segue.destination as? DetailsController
+            else {
+                return
+        }
+        dc.pokemon = pokemonArray[index.row]
+    }
 }
+
+
+class DetailsController : UIViewController {
+    
+    var pokemon : Pokemon!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(pokemon.name)
+        print("le sang de tes morts langage de MERDE")
+    }
+    
+}
+
