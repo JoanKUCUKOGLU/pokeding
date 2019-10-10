@@ -125,6 +125,7 @@
                     <connections>
                         <outlet property="dirFilter" destination="nHm-Pp-DME" id="qTj-X1-fBx"/>
                         <outlet property="pokemonList" destination="OpN-ru-DSG" id="CXJ-hX-CBq"/>
+                        <outlet property="pokemonName" destination="DCq-Q4-qv3" id="E1v-VN-ghg"/>
                         <outlet property="typeFilter" destination="96G-kN-Rn5" id="vYI-bO-Zlj"/>
                     </connections>
                 </viewController>
@@ -144,9 +145,12 @@
                                 <rect key="frame" x="20" y="109" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pkmn Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkn-y1-juJ" userLabel="Pkmn Name">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pkmn Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkn-y1-juJ" userLabel="Pkmn Name">
                                 <rect key="frame" x="168" y="109" width="134" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bkn-y1-juJ" secondAttribute="height" multiplier="134:33" id="M4v-1W-iqA"/>
+                                    <constraint firstAttribute="width" secondItem="Bkn-y1-juJ" secondAttribute="height" multiplier="134:33" id="bbz-Vy-KJr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
