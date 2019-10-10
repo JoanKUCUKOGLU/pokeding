@@ -20,7 +20,6 @@ class JsonParse{
     
         pokemon.setPkmn(id: json["_id"].stringValue, pkmnId: json["pkdx_id"].intValue, name :  json["name"].stringValue, imgUrl: json["image_url"].stringValue, desc: json["description"].stringValue, types: [json["types"].stringValue], evol: evolution)
         
-        
         return pokemon
     }
 }

@@ -13,6 +13,31 @@ import SwiftyJSON
 class ViewController: UIViewController {
     
     @IBOutlet weak var pokemonList: UITableView!
+    @IBOutlet weak var typeFilter: UISegmentedControl!
+    @IBOutlet weak var dirFilter: UISegmentedControl!
+    
+    var typeParam : String = "id"
+    var dirParam : String = "desc"
+    
+    @IBAction func typeAction(_ sender: Any) {
+        let filter = typeFilter.selectedSegmentIndex
+        if filter == 0 {
+            typeParam = "id"
+        } else {
+            typeParam = "name"
+        }
+        reloadPokedex(with: pokemonArray)
+    }
+    
+    @IBAction func dirAction(_ sender: Any) {
+        let filter = dirFilter.selectedSegmentIndex
+        if filter == 0 {
+            dirParam = "desc"
+        } else {
+            dirParam = "asc"
+        }
+        reloadPokedex(with: pokemonArray)
+    }
     
     var pokemonArray : [Pokemon] = []
     var pokemonAPI = PokemonAPI()
@@ -27,7 +52,26 @@ class ViewController: UIViewController {
     
     func reloadPokedex(with pkmnList:[Pokemon]) {
         self.pokemonArray = pkmnList
+        sortArray()
         pokemonList.reloadData()
+    }
+    
+    func sortArray() {
+        var sortedArray : [Pokemon] = self.pokemonArray
+        if self.typeParam == "id" {
+            if dirParam == "desc" {
+                sortedArray = self.pokemonArray.sorted(by: {$0.pkmnId < $1.pkmnId});
+            } else {
+                sortedArray = self.pokemonArray.sorted(by: {$0.pkmnId > $1.pkmnId});
+            }
+        } else {
+            if dirParam == "desc" {
+                sortedArray = self.pokemonArray.sorted(by: {$0.name < $1.name});
+            } else {
+                sortedArray = self.pokemonArray.sorted(by: {$0.name > $1.name});
+            }
+        }
+        self.pokemonArray = sortedArray
     }
 }
 
@@ -45,15 +89,18 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
         let cellId = "cellPokemon"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? PokemonTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not an instance of PokemonTableViewCell.")
         }
         
         let currentPokemon = pokemonArray[indexPath.row]
-        print(currentPokemon.name)
         
-        cell.pkmnImage.image = currentPokemon.img
-        cell.pkmnName.text = currentPokemon.name
-        cell.pkmnId.text = "\(currentPokemon.pkmnId)    "
+        let pokemonViewModel = PokemonTableViewCellViewModel(cellIndex: indexPath.row, pokemonName: currentPokemon.name, pokemonId: currentPokemon.pkmnId, pokemonImageURL: currentPokemon.imgUrl)
+        
+        (cell as PokemonTableViewCell).viewModel = pokemonViewModel
+        
+//        cell.pkmnImage.image = currentPokemon.img
+//        cell.pkmnName.text = currentPokemon.name
+//        cell.pkmnId.text = "\(currentPokemon.pkmnId)"
         
         return cell
     }
