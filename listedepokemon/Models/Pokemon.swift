@@ -14,10 +14,10 @@ class Pokemon {
     var name : String = ""
     var imgUrl : String = ""
     var description : String = ""
-    var types : [String] = [""]
-    var evolution : Evolution = Evolution()
+    var types : [Type] = []
+    var evolution : [Evolution] = []
     
-    func setPkmn(id : String, pkmnId : Int, name : String, imgUrl : String, desc : String, types : [String], evol : Evolution) {
+    func setPkmn(id : String, pkmnId : Int, name : String, imgUrl : String, desc : String, types : [Type], evol : [Evolution]) {
         self.id = id
         self.pkmnId = pkmnId
         self.name = name

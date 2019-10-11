@@ -15,16 +15,32 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var pkmnImage: UIImageView!
     @IBOutlet weak var pkmnType1Image: UIImageView!
     @IBOutlet weak var pkmnType2Image: UIImageView!
+    @IBOutlet weak var pkmnDesc: UILabel!
     
     var pokemon : Pokemon = Pokemon()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pkmnIdLabel.text = pokemon.pkmnId
+        
+        pkmnIdLabel.text = "#\(pokemon.pkmnId)"
         pkmnNameLabel.text = pokemon.name
-        pkmnImage.image = pokemon.imgUrl
-        print("pouet \(pokemon.name)")
-        print("le sang de tes morts langage de *****")
+        pkmnDesc.text = pokemon.description
+        
+        ImageDownloader.download(imageURLString: pokemon.imgUrl) { [weak self] result in
+            switch result {
+            case .success(let image) :
+                self?.pkmnImage.image = image
+            case .failure:
+                self?.pkmnImage.image = UIImage(named: "missingNo")
+            }
+        }
+        
+        print(pokemon.types)
+        pkmnType1Image.image = UIImage(named: pokemon.types[0].rawValue) ?? UIImage(named: "missingNo")!
+        if pokemon.types.count > 1 {
+            pkmnType2Image.image = UIImage(named: pokemon.types[1].rawValue) ?? UIImage(named: "missingNo")!
+        }
+        
     }
     
 

@@ -139,29 +139,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pkmn Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkn-y1-juJ" userLabel="Pkmn Name">
-                                <rect key="frame" x="168" y="109" width="134" height="33"/>
+                                <rect key="frame" x="168" y="115" width="134" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-8L-j55" userLabel="Pkmn Desc">
-                                <rect key="frame" x="20" y="273" width="374" height="223"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="40" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTH-8L-j55" userLabel="Pkmn Desc">
+                                <rect key="frame" x="20" y="257" width="374" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNL-5B-7hq" userLabel="Pkmn Type1">
-                                <rect key="frame" x="168" y="182" width="74" height="33"/>
+                                <rect key="frame" x="168" y="150" width="74" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KsM-eU-u9M" userLabel="Pkmn Type2">
-                                <rect key="frame" x="250" y="182" width="74" height="33"/>
+                                <rect key="frame" x="250" y="150" width="74" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa8-QD-2Pq">
-                                <rect key="frame" x="331" y="112" width="63" height="30"/>
+                                <rect key="frame" x="331" y="117" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -173,12 +173,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="fwa-9C-dNU"/>
                     <connections>
+                        <outlet property="pkmnDesc" destination="YTH-8L-j55" id="0Va-hq-QSL"/>
                         <outlet property="pkmnIdLabel" destination="Sa8-QD-2Pq" id="uB8-x7-7me"/>
                         <outlet property="pkmnImage" destination="U8P-0e-2lo" id="pMc-Ea-8uV"/>
                         <outlet property="pkmnNameLabel" destination="Bkn-y1-juJ" id="Gbp-30-Io4"/>
                         <outlet property="pkmnType1Image" destination="KNL-5B-7hq" id="t49-2c-wT1"/>
                         <outlet property="pkmnType2Image" destination="KsM-eU-u9M" id="Njz-Wb-JEs"/>
-                        <outlet property="pokIdLbl" destination="Sa8-QD-2Pq" id="ch9-JO-jGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqn-Hz-hRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
