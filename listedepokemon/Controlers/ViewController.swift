@@ -76,9 +76,10 @@ class ViewController: UIViewController {
         self.pokemonArray = sortedArray
     }
     
-    @IBAction func goToDetailButton(_ sender: Any) {
-        performSegue(withIdentifier: "goToDetails", sender: self)
-    }
+//    @IBAction func goToDetailsButton(_ sender: Any) {
+//        print("aapuyé")
+//        performSegue(withIdentifier: "goToDetails", sender: self)
+//    }
 //
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "goToDetails" {
@@ -149,7 +150,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let index = pokemonList.indexPathForSelectedRow,
-            let dc = segue.destination as? DetailsController
+            let dc = segue.destination as? PokemonDetailsViewController
             else {
                 return
         }

@@ -9,13 +9,22 @@
 import UIKit
 
 class PokemonDetailsViewController: UIViewController {
-
     
+    @IBOutlet weak var pkmnIdLabel: UILabel!
+    @IBOutlet weak var pkmnNameLabel: UILabel!
+    @IBOutlet weak var pkmnImage: UIImageView!
+    @IBOutlet weak var pkmnType1Image: UIImageView!
+    @IBOutlet weak var pkmnType2Image: UIImageView!
+    
+    var pokemon : Pokemon = Pokemon()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pkmnIdLabel.text = pokemon.pkmnId
+        pkmnNameLabel.text = pokemon.name
+        pkmnImage.image = pokemon.imgUrl
+        print("pouet \(pokemon.name)")
+        print("le sang de tes morts langage de *****")
     }
     
 
